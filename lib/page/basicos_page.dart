@@ -6,29 +6,36 @@ class BasicoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: <Widget>[
-        _contenedor_imagen(),
-        _contenedor_titulo(),
-        _crear_acciones(),
-        _contenedor_Texto()
-      ],
+        body: SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          _contenedor_imagen(),
+          _contenedor_titulo(),
+          _crear_acciones(),
+          _contenedor_Texto(),
+          _contenedor_Texto(),
+          _contenedor_Texto(),
+          _contenedor_Texto(),
+        ],
+      ),
     ));
   }
 
   _contenedor_titulo() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-      child: Row(
-        children: <Widget>[
-          _titulo_y_subtitulo(),
-          Icon(
-            Icons.star,
-            color: Colors.red,
-            size: 30.0,
-          ),
-          Text('41'),
-        ],
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+        child: Row(
+          children: <Widget>[
+            _titulo_y_subtitulo(),
+            Icon(
+              Icons.star,
+              color: Colors.red,
+              size: 30.0,
+            ),
+            Text('41'),
+          ],
+        ),
       ),
     );
   }
@@ -91,10 +98,12 @@ class BasicoPage extends StatelessWidget {
   }
 
   _contenedor_Texto() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 25.0),
-      child: Text(
-          'pecimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 25.0),
+        child: Text(
+            'pecimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+      ),
     );
   }
 }
